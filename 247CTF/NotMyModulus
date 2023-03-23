@@ -1,0 +1,27 @@
+We are trying to decrypt a packet capture taken on our internal network. We know you can decrypt the data using the correct private key, but we simply have too many. Can you identify the correct key? 
+
+Open encrypted.pcap with Wireshark.
+
+Select the number 6 where Info states “server Hello, Certificate, Server Hello Done”
+
+Open
+
+Transport Layer Security
+ |
+  -> TLSv1.2 Record Layer: Handshake Protocol: Certificate
+   |
+    -> Handshake Protocol: Certificate
+     |
+     -> Certificates (869 bytes)
+      |
+      -> Certificate: 3082035e30820246a0030201020209009924aa2296d5c26e... (id-at-commonName=127.0.0.1,id-at-organizationalUnitName=net100,id-at-organizationName=247CTF,id-at-countryName=US)
+
+Right click on it, select Export Packet Bytes and export as cert-exported-from-wireshark.der.
+
+Then exec solve.sh
+
+Write-UP: 
+https://b4d.sablun.org/blog/2020-04-04-247ctf-com-networking-not-my-modulus/
+
+OpenSSl docs:
+http://oriolrius.cat/blog/wp-content/uploads/2016/07/The-Most-Common-OpenSSL-Commands.pdf

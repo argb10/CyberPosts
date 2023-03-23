@@ -1,0 +1,10 @@
+Wargame Behemoth from OverTheWire
+
+$ ssh behemoth.labs.overthewire.org -p 2221 -l behemoth0 
+password: behemoth0
+
+simple ltrace and retrieve the pass
+
+$ ssh behemoth.labs.overthewire.org -p 2221 -l behemoth1
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

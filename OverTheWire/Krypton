@@ -1,0 +1,48 @@
+Level 0
+S1JZUFRPTklTR1JFQVQ= -> Decrypt Base64 -> KRYPTONISGREAT
+
+Level 1
+cat krypton2 | tr 'A-Za-z' 'N-ZA-Mn-za-m' -> LEVEL TWO PASSWORD ROTTEN
+
+Level 2
+cat krypton3 | tr '[M-ZA-L]' '[A-Z]' -> CAESARISEASY
+
+Level 3
+Chars order by frequency:
+
+S Q J U B N G C D Z V W M Y T X K E L A F I O R H P
+
+English Letter Frequency:
+
+E T A O I N S R H D L U C M F Y W G P B V K X Q J Z
+
+KSVVW BGSJD SVSIS VXBMN YQUUK BNWCU ANMJS
+
+Decode:
+
+WELLU ISEAH
+
+WELL DONE THE LEVEL FOUR PASSWORD IS BRUTE
+
+Level 4:
+
+Use found to retrieve the key -> use it to decode 
+https://www.dcode.fr/vigenere-cipher#0
+
+Level 5:
+Use the automatic decryption -> key = KEYLENGHT -> pass = RANDOM
+
+Level 6:
+If we encrypt AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA we retrieve EICTDGYIYZKTHNSIRFXYCPFUEOCKRN EICTDGYIYZKTHNSIRFXY
+If we encrypt BBBBBBBBBBBBBBBB we retrieve FJDUEHZJZALUIOTJ
+
+>>> [ord(b) - ord(a) for a,b in zip('BBBBBBBBBBBBBBBB', 'FJDUEHZJZALUIOTJ')]
+[4, 8, 2, 19, 3, 6, 24, 8, 24, -1, 10, 19, 7, 13, 18, 8]
+-----
+krypton7 = PNUKLYLWRQKGKBE
+-----
+>>> ''.join([chr(ord(b) - a) for a,b in zip([4, 8, 2, 19, 3, 6, 24, 8, 24, -1, 10, 19, 7, 13, 18, 8], 'PNUKLYLWRQKGKBE')])
+'LFS8IS4O:RA4D53'
+
+>>> ''.join([chr(ord(b) - a) for a,b in zip([4, 8, 2, -7, 3, 6, -2, 8, -2, -1, 10, -7, 7, -13, -8], 'PNUKLYLWRQKGKBE')])
+'LFSRISNOTRANDOM'

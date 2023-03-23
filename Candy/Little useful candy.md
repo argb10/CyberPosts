@@ -1,4 +1,4 @@
->Tmux conf
+## Tmux conf
 
 ``` bash
 ##Join Windows
@@ -44,7 +44,26 @@ bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -selecti
 bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard"
 ```
 
-Full update alias:
+## Full update alias:
 ```bash
 alias update='sudo apt update -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt clean -y'
+```
+
+## Upgrade pty
+Upgrade to a pty (https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/) :
+
+```bash
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+CTRL+Z
+$ stty raw -echo
+hit enter 2 times
+$ fg
+ener
+
+# In reverse shell
+$ reset
+$ export SHELL=bash
+$ export TERM=xterm-256color
+$ stty rows <num> columns <cols>
 ```

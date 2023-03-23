@@ -1,0 +1,44 @@
+ServMon
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-05-03 10:34 EDT
+Stats: 0:00:01 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 24.83% done; ETC: 10:35 (0:00:06 remaining)
+Stats: 0:00:05 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 48.00% done; ETC: 10:35 (0:00:07 remaining)
+Stats: 0:00:12 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 75.33% done; ETC: 10:35 (0:00:04 remaining)
+Stats: 0:00:21 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 99.99% done; ETC: 10:35 (0:00:00 remaining)
+Nmap scan report for 10.10.10.184
+Host is up (0.089s latency).
+Not shown: 991 closed ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+80/tcp   open  http
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+5666/tcp open  nrpe
+6699/tcp open  napster
+8443/tcp open  https-alt
+
+Nmap done: 1 IP address (1 host up) scanned in 26.15 seconds
+
+
+ftp 10.10.10.187
+anonymous:anonymous@10.10.10.184
+
+cat Confidential.txt 
+Nathan,
+
+I left your Passwords.txt file on your Desktop.  Please remove this once you have edited it yourself and place it back into the secure folder.
+
+Regards
+
+cat Notes\ to\ do.txt 
+1) Change the password for NVMS - Complete
+2) Lock down the NSClient Access - Complete
+3) Upload the passwords
+4) Remove public access to NVMS
+5) Place the secret files in SharePoint

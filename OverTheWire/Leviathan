@@ -1,0 +1,33 @@
+0
+levithan
+1
+rioGegei8m
+2
+ougahZi8Ta		reverse engineer: ltrace -e strcmp ./check
+3
+Ahdiemoo1j
+4
+vuH0coox6m
+5
+Tith4cokei
+6
+UgaoFee4li
+7
+I had to use a shellcode because the python was not working (maybe for the translation from python to shell)
+
+--brute.sh
+for i in {0000..9999}
+do
+/home/leviathan6/leviathan6 $i
+done
+
+chmod 777 brute.sh
+
+waaaaaaittttttttt
+
+$ whoami
+leviathan7
+$ cat /etc/levithan_pass/leviathan7
+cat: /etc/levithan_pass/leviathan7: No such file or directory
+$ cat /etc/leviathan_pass/leviathan7
+ahy7MaeBo9

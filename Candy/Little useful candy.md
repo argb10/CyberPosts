@@ -48,3 +48,14 @@ Full update alias:
 ```bash
 alias update='sudo apt update -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt clean -y'
 ```
+
+Upgrade terms
+---
+```bash
+which python
+python -c 'import pty;pty.spawn("/bin/bash")'
+```
+
+Now, if you also want tab auto completion _Ctrl-Z_ to background your shell and type on your box
+
+$ stty raw -echo

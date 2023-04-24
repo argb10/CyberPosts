@@ -24,7 +24,7 @@ Nmap done: 1 IP address (1 host up) scanned in 23.31 seconds
 
 ---
 Get headers from burpsuite and got the server software and version: **Phusion Passenger(R) 6.0.15**
-```sh
+```r
 HTTP/1.1 200 OK
 Content-Type: text/html;charset=utf-8
 Connection: close
@@ -54,6 +54,7 @@ https://cyber-guy.gitbook.io/cyber-guys-blog/blogs/initial-access-via-pdf-file-s
 webserver is running `pdfkit v0.8.6` for the html to pdf
 https://github.com/shamo0/PDFkit-CMD-Injection
 https://security.snyk.io/vuln/SNYK-RUBY-PDFKIT-2869795
+
 ---
 
 # Attack & Exploits

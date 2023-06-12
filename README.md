@@ -6,7 +6,10 @@ My knowledge about ethical hacking through some cybergames, courses and tries wi
 * The Code Book - Simon Sigh
 * Pentesting con Kali Linux 2.0 - OxWord
 
-## Games:
+## Certs:
+- Comptia Pentest+ PT0-002
+
+## CTF:
 * OvertheWire(Natas, Bandit, Leviathan, Krypton, Narnia)
 * HackTheBox
 * 247CTF
